@@ -1,0 +1,70 @@
+<!doctype html>
+
+<title>CodeMirror: Apex mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="./node_modules/codemirror/doc/docs.css">
+<link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
+
+<script src="./node_modules/codemirror/lib/codemirror.js"></script>
+<script src="./node_modules/codemirror/addon/edit/matchbrackets.js"></script>
+<script src="./node_modules/codemirror/mode/clike/clike.js"></script>
+<script src="./dist/apex.js"></script>
+<article>
+<h2>CodeMirror: Apex mode</h2>
+<form><textarea id="code" name="code">
+@RestResource(urlMapping = '/accounts')
+global with sharing class AccountsController {
+  private static SoqlService soqlService = new SoqlService();
+
+@HttpGet
+global static void getActiveAccountIds() {
+    RestContext.response.responseBody = Blob.valueOf(soqlService.getAllActiveAccountIds());
+    RestContext.response.statusCode = 200;
+  }
+}
+
+public class SoqlService {
+  public SoqlService() {}
+
+  public List<String> getAllActiveAccountIds() {
+    List<Account> accounts = [ SELECT Id FROM Account WHERE IsDeleted = FALSE];
+    List<String> accountIds = new List<String>();
+    for (Account account : accounts) {
+      accountIds.add(account.Id);
+    }
+    return accountIds;
+  }
+}
+
+@isTest
+public class SoqlServiceTests {
+  private static SoqlService service = new SoqlService();
+
+  @isTest static void testGetAllActiveAccountIds() {
+      test.startTest();
+      Account active = new Account();
+      insert active;
+      Account inactive = new Account();
+      insert inactive;
+      delete inactive;
+
+      List<String> output = service.getAllActiveAccountIds();
+      System.assert(output.contains(active.Id));
+      System.assert(!output.contains(inactive.Id));
+      test.stopTest();
+  }
+}
+</textarea></form>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        matchBrackets: true,
+        mode: "text/x-apex"
+      });
+    </script>
+
+    <p>A mode for Apex</p>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-apex</code></p>
+  </article>

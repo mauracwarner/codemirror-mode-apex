@@ -1,0 +1,44 @@
+{
+  "name": "codemirror-mode-apex",
+  "version": "0.0.0",
+  "description": "CodeMirror mode for Salesforce Apex development",
+  "keywords": [
+    "codemirror",
+    "apex",
+    "salesforce",
+    "force.com",
+    "mode"
+  ],
+  "main": "dist/apex.js",
+  "module": "dist/apex.mjs",
+  "jsnext:main": "dist/apex.mjs",
+  "scripts": {
+    "compile": "rollup -c && npm run uglify",
+    "lint": "echo \"Error: no linting library defined\" && exit 1",
+    "uglify": "uglifyjs dist/apex.js -o dist/apex.min.js",
+    "test": "echo \"Error: no tests defined\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Maura C. Warner <mwarner@gsgenetics.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "codemirror": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babelrc-rollup": "^3.0.0",
+    "rollup": "^0.36.3",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-watch": "^2.5.0",
+    "uglifyjs": "^2.4.10"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  }
+}
