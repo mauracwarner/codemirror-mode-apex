@@ -8,7 +8,7 @@ A CodeMirror mode for Salesforce Apex development
 + Include the new mode into your project, e.g.
 ```
 <script src="./node_modules/codemirror/lib/codemirror.js"></script>
-<script src="./apex.js"></script>
+<script src="./node_modules/codemirror-mode-apex/dist/apex.js"></script>
 ```
 or
 ```
