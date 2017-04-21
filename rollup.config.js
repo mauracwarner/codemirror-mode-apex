@@ -3,7 +3,6 @@ import babelrc from 'babelrc-rollup';
 import rollup from 'rollup';
 
 let pkg = require('./package.json');
-let clikeMode = require('./node_modules/codemirror/mode/clike/clike.js');
 
 export default {
   entry: 'dist/apex.js',
@@ -19,11 +18,6 @@ export default {
     {
       dest: pkg['jsnext:main'],
       format: 'es'
-    },
-    {
-      dest: clikeMode,
-      format: 'umd',
-      moduleName: 'getCLikeMode'
     }
   ]
 };
