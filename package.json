@@ -1,6 +1,6 @@
 {
   "name": "codemirror-mode-apex",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "CodeMirror mode for Salesforce Apex development",
   "keywords": [
     "codemirror",
@@ -24,9 +24,6 @@
   },
   "author": "Maura C. Warner <mwarner@gsgenetics.com>",
   "license": "MIT",
-  "peerDependencies": {
-    "codemirror": "^5.0.0"
-  },
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -42,6 +39,6 @@
     "npm": ">= 3.0.0"
   },
   "dependencies": {
-    "codemirror": "^5.25.2"
+    "codemirror": "^5.0.0"
   }
 }

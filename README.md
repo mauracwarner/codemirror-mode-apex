@@ -14,7 +14,7 @@ or
 ```
 import CodeMirror from 'codemirror'
 import registerApexMode from 'codemirror-mode-apex'
-
+```
 + Set the mode to `text/x-apex` in your editor, e.g.
 ```
 var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
