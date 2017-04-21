@@ -1,6 +1,6 @@
 {
   "name": "codemirror-mode-apex",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "CodeMirror mode for Salesforce Apex development",
   "keywords": [
     "codemirror",
