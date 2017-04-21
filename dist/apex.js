@@ -4,9 +4,6 @@
 // the rest of this code is from CodeMirror's clike.js
 
 (function (mod) {
-  if ((typeof exports === "undefined" ? "undefined" : _typeof(exports)) == "object" && (typeof module === "undefined" ? "undefined" : _typeof(module)) == "object") // CommonJS
-    mod(require("../../lib/codemirror"));else if (typeof define == "function" && define.amd) // AMD
-    define(["../../lib/codemirror"], mod);else // Plain browser env
     mod(CodeMirror);
 })(function (CodeMirror) {
   "use strict";

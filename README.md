@@ -10,11 +10,6 @@ A CodeMirror mode for Salesforce Apex development
 <script src="./node_modules/codemirror/lib/codemirror.js"></script>
 <script src="./node_modules/codemirror-mode-apex/dist/apex.js"></script>
 ```
-or
-```
-import CodeMirror from 'codemirror'
-import registerApexMode from 'codemirror-mode-apex'
-```
 + Set the mode to `text/x-apex` in your editor, e.g.
 ```
 var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
